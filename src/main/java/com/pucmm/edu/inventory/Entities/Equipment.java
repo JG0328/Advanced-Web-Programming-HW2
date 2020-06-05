@@ -16,17 +16,39 @@ public class Equipment implements Serializable {
     private Category subCategory;
     private boolean isActive;
     private int days;
+    private int stock;
+    private String image;
+
+
     public Equipment() {
 
     }
 
-    public Equipment(String name, long rate, Category category, Category subCategory, boolean isActive, int days) {
+    public Equipment(String name, long rate, Category category, Category subCategory, boolean isActive, int days, int stock, String image) {
         this.name = name;
         this.rate = rate;
         this.category = category;
         this.subCategory = subCategory;
         this.isActive = isActive;
         this.days = days;
+        this.stock = stock;
+        this.image = image;
+    }
+
+    public int getStock() {
+        return stock;
+    }
+
+    public void setStock(int stock) {
+        this.stock = stock;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 
     public String getUuid() {

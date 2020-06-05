@@ -18,18 +18,18 @@ public class Client implements Serializable {
     private String id; // DNI or Cedula
     private String phoneNumber;
     private String email;
-    private String photo;
+    private String image;
     private boolean isActive;
     @OneToMany
     private Set<Role> role;
 
-    public Client(String firstName, String lastName, String id, String phoneNumber, String email, String photo, boolean isActive, Set<Role> role) {
+    public Client(String firstName, String lastName, String id, String phoneNumber, String email, String image, boolean isActive, Set<Role> role) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.id = id;
         this.phoneNumber = phoneNumber;
         this.email = email;
-        this.photo = photo;
+        this.image = image;
         this.isActive = isActive;
         this.role = role;
     }
@@ -86,12 +86,12 @@ public class Client implements Serializable {
         this.email = email;
     }
 
-    public String getPhoto() {
-        return photo;
+    public String getImage() {
+        return image;
     }
 
-    public void setPhoto(String photo) {
-        this.photo = photo;
+    public void setImage(String image) {
+        this.image = image;
     }
 
     public boolean isActive() {
