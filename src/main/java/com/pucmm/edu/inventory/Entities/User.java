@@ -8,11 +8,11 @@ import java.util.Set;
 public class User implements Serializable {
     @Id
     @GeneratedValue
-    private String uuid;
+    private int id;
     private String user;
     private String password;
-    @OneToMany(cascade = CascadeType.ALL)
-    private Set<Role> rolSet;
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private Set<Role> roleSet;
     private boolean isActive;
 
     public User() {
@@ -22,16 +22,8 @@ public class User implements Serializable {
     public User(String user, String password, Set<Role> rolSet, boolean isActive) {
         this.user = user;
         this.password = password;
-        this.rolSet = rolSet;
+        this.roleSet = rolSet;
         this.isActive = isActive;
-    }
-
-    public String getUuid() {
-        return uuid;
-    }
-
-    public void setUuid(String uuid) {
-        this.uuid = uuid;
     }
 
     public String getUser() {
@@ -50,12 +42,12 @@ public class User implements Serializable {
         this.password = password;
     }
 
-    public Set<Role> getRolSet() {
-        return rolSet;
+    public Set<Role> getRoleSet() {
+        return roleSet;
     }
 
-    public void setRolSet(Set<Role> rolSet) {
-        this.rolSet = rolSet;
+    public void setRoleSet(Set<Role> roleSet) {
+        this.roleSet = roleSet;
     }
 
     public boolean isActive() {
@@ -64,5 +56,13 @@ public class User implements Serializable {
 
     public void setActive(boolean active) {
         isActive = active;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

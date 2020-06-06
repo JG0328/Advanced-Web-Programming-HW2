@@ -9,7 +9,7 @@ import java.io.Serializable;
 public class Role implements Serializable {
     @Id
     @GeneratedValue
-    private String uuid;
+    private int id;
     private String role;
 
     public Role() {
@@ -19,19 +19,19 @@ public class Role implements Serializable {
         this.role = role;
     }
 
-    public String getUuid() {
-        return uuid;
-    }
-
-    public void setUuid(String uuid) {
-        this.uuid = uuid;
-    }
-
     public String getRole() {
         return role;
     }
 
     public void setRole(String role) {
         this.role = role;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

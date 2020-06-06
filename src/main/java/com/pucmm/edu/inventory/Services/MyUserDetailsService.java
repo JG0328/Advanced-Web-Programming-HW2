@@ -17,6 +17,7 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -30,7 +31,7 @@ public class MyUserDetailsService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        User user = usersRepository.findByUsername(username);
+        User user = usersRepository.findByUser(username);
 
         if (user == null) {
             System.out.println("User not found: " + username);
@@ -38,7 +39,7 @@ public class MyUserDetailsService implements UserDetailsService {
         }
 
         Set<GrantedAuthority> roles = new HashSet<GrantedAuthority>();
-        for (Role role : user.getRolSet()) {
+        for (Role role : user.getRoleSet()) {
             roles.add(new SimpleGrantedAuthority(role.getRole()));
         }
 
@@ -54,7 +55,8 @@ public class MyUserDetailsService implements UserDetailsService {
             Role role = new Role("ROLE_ADMIN");
             rolesRepository.save(role);
 
-            User admin = new User("admin", "admin", new HashSet<>(Arrays.asList(role)), true);
+            User admin = new User("admin", new BCryptPasswordEncoder().encode("admin"),
+                    new HashSet<>(Arrays.asList(role)), true);
 
             usersRepository.save(admin);
         }

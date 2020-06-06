@@ -9,9 +9,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ClientsRepository extends JpaRepository<Client, String> {
-    Client findByName(String name);
-
-    List<Client> findAllByEnabled(Boolean enabled);
+    List<Client> findAllByIsActive(Boolean isctive);
 
     Client findById(int id);
 }

@@ -11,7 +11,7 @@ import java.util.Set;
 public class Client implements Serializable {
     @Id
     @GeneratedValue
-    private String uuid;
+    private int clientId;
     private String firstName;
     private String lastName;
     private String id; // DNI or Cedula
@@ -36,14 +36,6 @@ public class Client implements Serializable {
 
     public Client() {
 
-    }
-
-    public String getUuid() {
-        return uuid;
-    }
-
-    public void setUuid(String uuid) {
-        this.uuid = uuid;
     }
 
     public String getFirstName() {
@@ -108,5 +100,13 @@ public class Client implements Serializable {
 
     public void setRole(Set<Role> role) {
         this.role = role;
+    }
+
+    public int getClientId() {
+        return clientId;
+    }
+
+    public void setClientId(int clientId) {
+        this.clientId = clientId;
     }
 }

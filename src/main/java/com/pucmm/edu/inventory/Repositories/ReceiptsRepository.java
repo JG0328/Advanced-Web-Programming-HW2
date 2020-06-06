@@ -14,5 +14,5 @@ public interface ReceiptsRepository extends JpaRepository<Receipt, String> {
 
     List<Receipt> findAllByClient(Client client);
 
-    List<Receipt> findAllByPendingOrderByDeliveryDateDesc();
+    List<Receipt> findAllByPendingOrderByReturnDateDesc(Boolean x);
 }
