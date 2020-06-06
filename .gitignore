@@ -4,7 +4,6 @@ build/
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**
 !**/src/test/**
-*.class
 
 ### STS ###
 .apt_generated
@@ -14,6 +13,7 @@ build/
 .settings
 .springBeans
 .sts4-cache
+*.class
 
 ### IntelliJ IDEA ###
 .idea
@@ -31,3 +31,6 @@ out/
 
 ### VS Code ###
 .vscode/
+
+**/node_modules
+package-lock.json
