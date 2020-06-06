@@ -5,7 +5,6 @@ import java.io.Serializable;
 
 @Entity
 public class Category implements Serializable {
-
     @Id
     @GeneratedValue
     @Column()
@@ -15,7 +14,6 @@ public class Category implements Serializable {
     private Category category;
     private String description;
     private boolean isActive;
-
 
     public Category() {
 

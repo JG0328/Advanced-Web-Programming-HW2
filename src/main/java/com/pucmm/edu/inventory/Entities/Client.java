@@ -9,7 +9,6 @@ import java.util.Set;
 
 @Entity
 public class Client implements Serializable {
-
     @Id
     @GeneratedValue
     private String uuid;
@@ -23,7 +22,8 @@ public class Client implements Serializable {
     @OneToMany
     private Set<Role> role;
 
-    public Client(String firstName, String lastName, String id, String phoneNumber, String email, String image, boolean isActive, Set<Role> role) {
+    public Client(String firstName, String lastName, String id, String phoneNumber, String email, String image,
+            boolean isActive, Set<Role> role) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.id = id;

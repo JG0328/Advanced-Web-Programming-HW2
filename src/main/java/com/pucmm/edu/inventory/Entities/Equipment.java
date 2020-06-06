@@ -19,12 +19,12 @@ public class Equipment implements Serializable {
     private int stock;
     private String image;
 
-
     public Equipment() {
 
     }
 
-    public Equipment(String name, long rate, Category category, Category subCategory, boolean isActive, int days, int stock, String image) {
+    public Equipment(String name, long rate, Category category, Category subCategory, boolean isActive, int days,
+            int stock, String image) {
         this.name = name;
         this.rate = rate;
         this.category = category;

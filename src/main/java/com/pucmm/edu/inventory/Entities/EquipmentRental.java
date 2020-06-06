@@ -76,5 +76,4 @@ public class EquipmentRental implements Serializable {
         isReturned = returned;
     }
 
-
 }

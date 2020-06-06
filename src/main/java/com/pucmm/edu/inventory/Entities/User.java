@@ -6,25 +6,20 @@ import java.util.Set;
 
 @Entity
 public class User implements Serializable {
-
     @Id
     @GeneratedValue
     private String uuid;
-    private String firstName;
-    private String lastName;
     private String user;
     private String password;
     @OneToMany(cascade = CascadeType.ALL)
     private Set<Role> rolSet;
     private boolean isActive;
 
-    public User(){
+    public User() {
 
     }
 
-    public User(String firstName, String lastName, String user, String password, Set<Role> rolSet, boolean isActive) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+    public User(String user, String password, Set<Role> rolSet, boolean isActive) {
         this.user = user;
         this.password = password;
         this.rolSet = rolSet;
@@ -37,22 +32,6 @@ public class User implements Serializable {
 
     public void setUuid(String uuid) {
         this.uuid = uuid;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
     }
 
     public String getUser() {

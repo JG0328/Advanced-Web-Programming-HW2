@@ -1,6 +1,5 @@
 package com.pucmm.edu.inventory.Entities;
 
-
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
@@ -8,25 +7,24 @@ import java.util.Set;
 
 @Entity
 public class Receipt implements Serializable {
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private String uuid;
     private Date date;
     private String returnDate;
     @OneToOne
-    private  Client client;
+    private Client client;
     @OneToMany
     private Set<EquipmentRental> equipmentRental;
     private float cost;
     private int days;
     private Boolean pending;
 
-
     public Receipt() {
     }
 
-    public Receipt(Date date, String returnDate, Client client, Set<EquipmentRental> equipmentRental, float cost, int days, Boolean pending) {
+    public Receipt(Date date, String returnDate, Client client, Set<EquipmentRental> equipmentRental, float cost,
+            int days, Boolean pending) {
         this.date = date;
         this.returnDate = returnDate;
         this.client = client;
