@@ -7,11 +7,10 @@ import java.io.Serializable;
 public class Category implements Serializable {
     @Id
     @GeneratedValue
-    @Column()
-    private String uuid;
+    private int id;
     private String name;
     @OneToOne
-    private Category category;
+    private Category parentCategory;
     private String description;
     private boolean isActive;
 
@@ -19,19 +18,19 @@ public class Category implements Serializable {
 
     }
 
-    public Category(String name, Category category, String description, boolean isActive) {
+    public Category(String name, Category parentCategory, String description, boolean isActive) {
         this.name = name;
-        this.category = category;
+        this.parentCategory = parentCategory;
         this.description = description;
         this.isActive = isActive;
     }
 
-    public String getUuid() {
-        return uuid;
+    public int getId() {
+        return id;
     }
 
-    public void setUuid(String uuid) {
-        this.uuid = uuid;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -42,12 +41,12 @@ public class Category implements Serializable {
         this.name = name;
     }
 
-    public Category getCategory() {
-        return category;
+    public Category getParentCategory() {
+        return parentCategory;
     }
 
-    public void setCategory(Category category) {
-        this.category = category;
+    public void setParentCategory(Category category) {
+        this.parentCategory = category;
     }
 
     public String getDescription() {

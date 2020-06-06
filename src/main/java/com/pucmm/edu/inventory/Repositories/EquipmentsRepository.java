@@ -6,6 +6,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface EquipmentsRepository extends JpaRepository<Equipment, String> {
-    Equipment findByUuid(String uuid);
+public interface EquipmentsRepository extends JpaRepository<Equipment, Integer> {
+
 }

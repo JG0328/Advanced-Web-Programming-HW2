@@ -9,7 +9,7 @@ import java.util.Set;
 public class Receipt implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private String uuid;
+    private int id;
     private Date date;
     private String returnDate;
     @OneToOne
@@ -24,7 +24,7 @@ public class Receipt implements Serializable {
     }
 
     public Receipt(Date date, String returnDate, Client client, Set<EquipmentRental> equipmentRental, float cost,
-            int days, Boolean pending) {
+                   int days, Boolean pending) {
         this.date = date;
         this.returnDate = returnDate;
         this.client = client;
@@ -34,12 +34,12 @@ public class Receipt implements Serializable {
         this.pending = pending;
     }
 
-    public String getUuid() {
-        return uuid;
+    public int getId() {
+        return id;
     }
 
-    public void setUuid(String uuid) {
-        this.uuid = uuid;
+    public void setId(int uuid) {
+        this.id = uuid;
     }
 
     public Date getDate() {

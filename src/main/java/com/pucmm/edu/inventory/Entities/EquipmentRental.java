@@ -7,8 +7,7 @@ import java.io.Serializable;
 public class EquipmentRental implements Serializable {
     @Id
     @GeneratedValue()
-    @Column()
-    private String uuid;
+    private int id;
     @OneToOne
     private Equipment equipment;
     private int numberRented;
@@ -28,12 +27,12 @@ public class EquipmentRental implements Serializable {
         this.isReturned = isReturned;
     }
 
-    public String getUuid() {
-        return uuid;
+    public int getId() {
+        return id;
     }
 
-    public void setUuid(String uuid) {
-        this.uuid = uuid;
+    public void setId(int uuid) {
+        this.id = uuid;
     }
 
     public Equipment getEquipment() {

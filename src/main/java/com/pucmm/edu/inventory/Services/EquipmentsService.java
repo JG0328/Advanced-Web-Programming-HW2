@@ -11,7 +11,7 @@ public class EquipmentsService {
     @Autowired
     EquipmentsRepository equipmentsRepository;
 
-    public Equipment findEquipment(String uuid) {
-        return equipmentsRepository.findByUuid(uuid);
+    public Equipment findEquipment(int id) {
+        return equipmentsRepository.findById(id).get();
     }
 }

@@ -23,7 +23,7 @@ public class Client implements Serializable {
     private Set<Role> role;
 
     public Client(String firstName, String lastName, String id, String phoneNumber, String email, String image,
-            boolean isActive, Set<Role> role) {
+                  boolean isActive, Set<Role> role) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.id = id;
@@ -36,6 +36,10 @@ public class Client implements Serializable {
 
     public Client() {
 
+    }
+
+    public String getFullName() {
+        return getFirstName() + " " + getLastName();
     }
 
     public String getFirstName() {
