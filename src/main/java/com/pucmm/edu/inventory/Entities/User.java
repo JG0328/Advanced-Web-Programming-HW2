@@ -1,9 +1,7 @@
 package com.pucmm.edu.inventory.Entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 public class User {
@@ -14,18 +12,18 @@ public class User {
     private String password;
     private boolean enabled;
 
-    @ManyToOne
-    private Role role;
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private Set<Role> roles;
 
     public User() {
 
     }
 
-    public User(String username, String password, boolean enabled, Role role) {
+    public User(String username, String password, boolean enabled, Set<Role> roles) {
         this.username = username;
         this.password = password;
         this.enabled = enabled;
-        this.role = role;
+        this.roles = roles;
     }
 
     public int getId() {
@@ -60,11 +58,11 @@ public class User {
         this.enabled = enabled;
     }
 
-    public Role getRole() {
-        return role;
+    public Set<Role> getRoles() {
+        return roles;
     }
 
-    public void setRole(Role role) {
-        this.role = role;
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
     }
 }
