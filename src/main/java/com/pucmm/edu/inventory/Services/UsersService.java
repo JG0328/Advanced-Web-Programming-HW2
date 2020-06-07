@@ -5,8 +5,11 @@ import com.pucmm.edu.inventory.Entities.User;
 import com.pucmm.edu.inventory.Repositories.RolesRepository;
 import com.pucmm.edu.inventory.Repositories.UsersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.Arrays;
+import java.util.HashSet;
 
 @Service
 public class UsersService {
@@ -16,15 +19,16 @@ public class UsersService {
     @Autowired
     RolesRepository rolesRepository;
 
+    @Transactional
     public void createAdmin() {
         if (usersRepository.findByUsername("admin") == null) {
-            rolesRepository.save(new Role("ADMIN"));
+            rolesRepository.save(new Role("ROLE_ADMIN"));
 
             usersRepository.save(
                     new User("admin",
-                            new BCryptPasswordEncoder().encode("admin"),
+                            "admin",
                             true,
-                            rolesRepository.findByName("ADMIN")));
+                            new HashSet<>(Arrays.asList(rolesRepository.findByName("ROLE_ADMIN")))));
         }
     }
 }
