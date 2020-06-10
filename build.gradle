@@ -7,6 +7,7 @@ plugins {
 group = 'com.pucmm.edu'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
+sourceCompatibility = '11'
 
 repositories {
     mavenCentral()
@@ -16,6 +17,8 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.springframework.boot:spring-boot-starter-freemarker'
+    developmentOnly("org.springframework.boot:spring-boot-devtools")
     compile 'org.hibernate.validator:hibernate-validator'
     compileOnly 'org.projectlombok:lombok'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
