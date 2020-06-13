@@ -1,5 +1,5 @@
 
-<#import "macro.ftl" as macros>
+<#import "../macro.ftl" as macros>
 
 <@macros.head />
 
@@ -16,6 +16,8 @@
                 <th scope="col">Name</th>
                 <th scope="col">Description</th>
                 <th scope="col">Parent Family</th>
+                <th />
+                <th />
             </tr>
             </thead>
             <tbody>
@@ -23,7 +25,20 @@
                 <tr>
                     <td>${category.name}</td>
                     <td>${category.description}</td>
-                    <td>${category.parentCategory}</td>
+                    <#if category.parentCategory??>
+                        <td>${category.parentCategory.name}</td>
+                    <#else>
+                        <td>None</td>
+                    </#if>
+
+                    <td>
+                        <a href="/equipment/update">
+                            <button type="button" class="btn btn-warning">Update</button>
+                        </a>
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-danger">Delete</button>
+                    </td>
             </#list>
             </tbody>
         </table>

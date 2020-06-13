@@ -1,4 +1,4 @@
-<#import "macro.ftl" as macros>
+<#import "../macro.ftl" as macros>
 
 <@macros.head />
 
