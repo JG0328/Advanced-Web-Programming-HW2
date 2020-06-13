@@ -13,31 +13,25 @@
             <br />
             <thead>
             <tr>
-                <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
+                <th scope="col">Image</th>
+                <th scope="col">Name</th>
+                <th scope="col">Family</th>
+                <th scope="col">Sub-Family</th>
+                <th scope="col">Rate</th>
+                <th scope="col">Stock</th>
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-            </tr>
+            <#list equipments as equipment>
+                <tr>
+                    <td>${equipment.image}</td>
+                    <td>${equipment.name}</td>
+                    <td>${equipment.category}</td>
+                    <td>${equipment.subCategory}</td>
+                    <td>${equipment.rate}</td>
+                    <td>${equipment.stock}</td>
+                </tr>
+            </#list>
             </tbody>
         </table>
 

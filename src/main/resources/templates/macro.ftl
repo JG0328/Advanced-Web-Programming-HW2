@@ -35,7 +35,7 @@
                         <a href="/equipment">Equipment</a>
                     </li>
                     <li>
-                        <a href="#">Families</a>
+                        <a href="/family">Families</a>
                     </li>
                     <li>
                         <a href="#">Rentals</a>

@@ -27,6 +27,7 @@ public class Category {
         this.enabled = enabled;
     }
 
+
     public int getId() {
         return id;
     }
@@ -65,5 +66,9 @@ public class Category {
 
     public void setEnabled(boolean enabled) {
         this.enabled = enabled;
+    }
+
+    public boolean isEnabled() {
+        return enabled;
     }
 }
