@@ -7,8 +7,10 @@
     <@macros.sidebar />
     <div id="content" class="p-4 p-md-5">
         <@macros.navbar />
-
+        <a href="/equipment/add"><button type="button" class="btn btn-outline-primary">Add a new Equipment</button></a>
+        <br />
         <table class="table">
+            <br />
             <thead>
             <tr>
                 <th scope="col">#</th>
