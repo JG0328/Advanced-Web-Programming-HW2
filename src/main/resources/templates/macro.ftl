@@ -33,7 +33,7 @@
                         <a href="#">Clients</a>
                     </li>
                     <li>
-                        <a href="#">Equipment</a>
+                        <a href="/equipment">Equipment</a>
                     </li>
                     <li>
                         <a href="#">Families</a>
