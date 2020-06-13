@@ -15,17 +15,17 @@ public class ClientsController {
     @Autowired
     private ClientsServices clientsServices;
 
-    @RequestMapping(value = "indexClients", method = RequestMethod.GET)
+    @RequestMapping(value = "/client", method = RequestMethod.GET)
     public ModelAndView indexClients() {
         ModelAndView model = new ModelAndView();
         List<Client> clients = clientsServices.listClients();
         model.addObject("clients", clients);
-        model.setViewName("Clients/index");
+        model.setViewName("client");
         return model;
     }
 
-    @RequestMapping(value = "/createClient", method = RequestMethod.GET)
+    @RequestMapping(value = "/client/add", method = RequestMethod.GET)
     public ModelAndView newClient() {
-        return new ModelAndView("Clients/new", "client", new Client());
+        return new ModelAndView("add_client", "client", new Client());
     }
 }
