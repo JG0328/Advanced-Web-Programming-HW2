@@ -33,24 +33,24 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         auth.userDetailsService(userDetailsServiceImpl).passwordEncoder(passwordEncoder());
     }
 
-//    @Override
-//    protected void configure(HttpSecurity http) throws Exception {
-//        http.csrf().disable();
-//        http.headers().frameOptions().disable();
-//
-//        http.authorizeRequests().antMatchers("/dbconsole/**").permitAll().antMatchers("/", "/login", "/logout").permitAll();
-//
-//        http.authorizeRequests().antMatchers("/user").access("hasRole('ROLE_USER')");
-//
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http.csrf().disable();
+        http.headers().frameOptions().disable();
+
+        http.authorizeRequests().antMatchers("/dbconsole/**").permitAll().antMatchers("/", "/login", "/logout").permitAll();
+
+        http.authorizeRequests().antMatchers("**/create").access("hasRole('ROLE_ADMIN')");
+
 //        http.authorizeRequests().antMatchers("/admin", "/index**", "/crear**", "/historial").access("hasRole('ROLE_ADMIN')");
-//
+
 //        http.authorizeRequests().and().formLogin()//
 //                .loginPage("/login")//
 //                .usernameParameter("username")
 //                .passwordParameter("password")
 //                .and().formLogin().successHandler(successHandler)
 //                .and().logout().permitAll();
-//    }
+    }
 
     @Override
     public void configure(WebSecurity web) throws Exception {

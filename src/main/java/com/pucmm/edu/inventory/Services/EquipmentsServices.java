@@ -35,6 +35,15 @@ public class EquipmentsServices {
         equipmentsRepository.save(equipment);
     }
 
+    @Transactional
+    public List<Equipment> findAll(){
+        return equipmentsRepository.findAll();
+    }
+
+
+
+
+
 //    public List<Equipment> listEquip(Boolean aBoolean, int stock) {
 //
 //        return equipmentsRepository.findAllByEnabledAndStockGreaterThan(aBoolean, stock);
