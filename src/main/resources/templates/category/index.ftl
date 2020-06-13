@@ -7,18 +7,18 @@
     <@macros.sidebar />
     <div id="content" class="p-4 p-md-5">
         <@macros.navbar />
-        <h2>Families</h2>
+        <h2><@spring.message "category" /></h2>
         <br/>
-        <a href="/family/create"><button type="button" class="btn btn-outline-primary">Add new</button></a>
+        <a href="/family/create"><button type="button" class="btn btn-outline-primary"><@spring.message "add_new" /></button></a>
         <br />
 
         <table class="table">
             <br />
             <thead>
             <tr>
-                <th scope="col">Name</th>
-                <th scope="col">Description</th>
-                <th scope="col">Parent Family</th>
+                <th scope="col"><@spring.message "name" /></th>
+                <th scope="col"><@spring.message "description" /></th>
+                <th scope="col"><@spring.message "parent_category" /></th>
                 <th />
                 <th />
             </tr>
@@ -31,17 +31,17 @@
                     <#if category.parentCategory??>
                         <td>${category.parentCategory.name}</td>
                     <#else>
-                        <td>None</td>
+                        <td><@spring.message "none" /></td>
                     </#if>
 
                     <td>
                         <a href="/family/update/${category.id}">
-                            <button type="button" class="btn btn-warning">Update</button>
+                            <button type="button" class="btn btn-warning"><@spring.message "update" /></button>
                         </a>
                     </td>
                     <td>
                         <form method="POST" action="/family/delete/${category.id}">
-                            <button type="submit" class="btn btn-danger">Delete</button>
+                            <button type="submit" class="btn btn-danger"><@spring.message "delete" /></button>
                         </form>
                     </td>
             </#list>
