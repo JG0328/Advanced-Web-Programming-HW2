@@ -32,12 +32,14 @@
                     </#if>
 
                     <td>
-                        <a href="/equipment/update">
+                        <a href="/family/update/${category.id}">
                             <button type="button" class="btn btn-warning">Update</button>
                         </a>
                     </td>
                     <td>
-                        <button type="button" class="btn btn-danger">Delete</button>
+                        <form method="POST" action="/family/delete/${category.id}">
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        </form>
                     </td>
             </#list>
             </tbody>

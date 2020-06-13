@@ -5,8 +5,11 @@ import com.pucmm.edu.inventory.Repositories.CategoriesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
+
+import static org.springframework.http.HttpStatus.NOT_FOUND;
 
 @Service
 public class CategoriesServices {
@@ -14,7 +17,7 @@ public class CategoriesServices {
     CategoriesRepository categoriesRepository;
 
     @Transactional
-    public void createCategory(Category categories) {
+    public void save(Category categories) {
         categoriesRepository.save(categories);
     }
 
