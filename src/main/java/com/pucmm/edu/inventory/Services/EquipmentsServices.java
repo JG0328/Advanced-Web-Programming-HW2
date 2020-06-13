@@ -29,14 +29,14 @@ public class EquipmentsServices {
     }
 
     @Transactional
-    public void updateStock(Equipment equipment, int stock, int stockRent){
+    public void updateStock(Equipment equipment, int stock, int stockRent) {
         equipment.setStockRent(stockRent);
         equipment.setStock(stock);
-        equipRepository.save(equipment);
+        equipmentsRepository.save(equipment);
     }
 
-    public List<Equip> listEquip(Boolean aBoolean, int stock){
-
-        return equipRepository.findAllByEnabledAndStockGreaterThan(aBoolean,stock);
-    }
+//    public List<Equipment> listEquip(Boolean aBoolean, int stock) {
+//
+//        return equipmentsRepository.findAllByEnabledAndStockGreaterThan(aBoolean, stock);
+//    }
 }
