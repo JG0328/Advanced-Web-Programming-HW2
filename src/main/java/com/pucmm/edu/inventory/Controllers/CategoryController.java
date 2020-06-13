@@ -22,7 +22,6 @@ public class CategoryController {
     public ModelAndView main() {
         var params = new HashMap<String, Object>();
         params.put("categories", categoriesServices.findAll(true));
-        System.out.println(categoriesServices.findAll(true));
         return new ModelAndView("category/index", params);
     }
 

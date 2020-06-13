@@ -14,7 +14,7 @@ public class EquipmentsServices {
     EquipmentsRepository equipmentsRepository;
 
     @Transactional
-    public void createEquipment(Equipment equipment) {
+    public void save(Equipment equipment) {
         equipmentsRepository.save(equipment);
     }
 

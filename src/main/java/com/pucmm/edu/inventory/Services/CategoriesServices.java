@@ -45,6 +45,7 @@ public class CategoriesServices {
     public Category findCategory(int id){
         return categoriesRepository.findById(id);
     }
+
     public List<Category> getParentCategories(Boolean enabled){
         return categoriesRepository.findAllByParentCategoryNullAndEnabled(enabled);
     }

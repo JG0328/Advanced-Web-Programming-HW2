@@ -14,8 +14,6 @@ public class Equipment {
     private long rate;
     @OneToOne
     private Category category;
-    @OneToOne
-    private Category subCategory;
     private boolean enabled;
     private int days;
     private String photo;
@@ -25,11 +23,10 @@ public class Equipment {
     public Equipment() {
     }
 
-    public Equipment(String name, long rate, Category category, Category subCategory, boolean enabled, int days, String photo, int stock, int stockRent) {
+    public Equipment(String name, long rate, Category category, boolean enabled, int days, String photo, int stock, int stockRent) {
         this.name = name;
         this.rate = rate;
         this.category = category;
-        this.subCategory = subCategory;
         this.enabled = enabled;
         this.days = days;
         this.photo = photo;
@@ -67,14 +64,6 @@ public class Equipment {
 
     public void setCategory(Category category) {
         this.category = category;
-    }
-
-    public Category getSubCategory() {
-        return subCategory;
-    }
-
-    public void setSubCategory(Category subCategory) {
-        this.subCategory = subCategory;
     }
 
     public boolean isEnabled() {

@@ -1,4 +1,4 @@
-<#import "macro.ftl" as macros>
+<#import "../macro.ftl" as macros>
 
 <@macros.head />
 
@@ -7,22 +7,19 @@
     <div id="content" class="p-4 p-md-5">
         <@macros.navbar />
 
-        <form>
+        <form method="POST" action="${action}">
             <div class="form-group">
                 <label for="family">Select a family</label>
-                <select id="family" name="family"  class="browser-default custom-select">
-                    <option selected value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                <select id="category" name="category"  class="browser-default custom-select">
+                    <option selected value="-1">None</option>
+                    <#list categories as category>
+                        <option value="${category.id}">${category.name}</option>
+                    </#list>
                 </select>
             </div>
             <div class="form-group">
-                <label for="sub-family">Select a sub-family</label>
-                <select id="sub-family" name="sub-family" class="browser-default custom-select">
-                    <option selected value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                </select>
+                <label for="name">Name</label>
+                <input type="text" class="form-control" name="name" id="name" placeholder="Enter name">
             </div>
             <div class="form-group">
                 <label for="stock">Stock</label>
@@ -38,9 +35,7 @@
                 <input type="file" class="form-control-file" id="image" placeholder="Image">
             </div>
 
-
-
-            <button type="submit" class="btn btn-primary">Add</button>
+            <button type="submit" class="btn btn-primary">${name}</button>
         </form>
     </div>
 </div>
