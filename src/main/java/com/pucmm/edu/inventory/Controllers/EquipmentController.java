@@ -15,4 +15,10 @@ public class EquipmentController {
         var params = new HashMap<String, Object>();
         return new ModelAndView("equipment", params);
     }
+
+    @RequestMapping(value = "/equipment/add", method = RequestMethod.GET)
+    public ModelAndView add() {
+        var params = new HashMap<String, Object>();
+        return new ModelAndView("add_equipment", params);
+    }
 }
