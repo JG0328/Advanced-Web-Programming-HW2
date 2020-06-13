@@ -16,6 +16,8 @@
 <div id="content" class="p-4 p-md-5">
     <@macros.navbar />
 
+
+
     <table class="table">
         <thead>
         <tr>
@@ -47,8 +49,6 @@
         </tbody>
     </table>
 
-
-</div>
 </div>
 
 <script src="js/jquery.min.js"></script>
