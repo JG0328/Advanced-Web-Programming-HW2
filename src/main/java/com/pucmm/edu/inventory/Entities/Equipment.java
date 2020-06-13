@@ -11,7 +11,7 @@ public class Equipment {
     @GeneratedValue
     private int id;
     private String name;
-    private long rate;
+    private float rate;
     @OneToOne
     private Category category;
     private boolean enabled;
@@ -23,12 +23,11 @@ public class Equipment {
     public Equipment() {
     }
 
-    public Equipment(String name, long rate, Category category, boolean enabled, int days, String photo, int stock, int stockRent) {
+    public Equipment(String name, float rate, Category category, boolean enabled, String photo, int stock, int stockRent) {
         this.name = name;
         this.rate = rate;
         this.category = category;
         this.enabled = enabled;
-        this.days = days;
         this.photo = photo;
         this.stock = stock;
         this.stockRent = stockRent;
@@ -50,11 +49,11 @@ public class Equipment {
         this.name = name;
     }
 
-    public long getRate() {
+    public float getRate() {
         return rate;
     }
 
-    public void setRate(long rate) {
+    public void setRate(float rate) {
         this.rate = rate;
     }
 

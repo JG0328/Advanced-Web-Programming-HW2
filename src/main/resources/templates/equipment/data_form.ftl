@@ -6,7 +6,7 @@
     <@macros.sidebar />
     <div id="content" class="p-4 p-md-5">
         <@macros.navbar />
-
+        <h2>${name} Equipment</h2>
         <form method="POST" action="${action}">
             <div class="form-group">
                 <label for="family">Select a family</label>
@@ -19,15 +19,15 @@
             </div>
             <div class="form-group">
                 <label for="name">Name</label>
-                <input type="text" class="form-control" name="name" id="name" placeholder="Enter name">
+                <input type="text" value="${equipment.name}" class="form-control" name="name" id="name" placeholder="Enter name">
             </div>
             <div class="form-group">
                 <label for="stock">Stock</label>
-                <input type="number" class="form-control" name="stock" id="stock" placeholder="Enter items in stock">
+                <input type="number" value="${equipment.stock}" class="form-control" name="stock" id="stock" placeholder="Enter items in stock">
             </div>
             <div class="form-group">
                 <label for="rate">Daily Rate</label>
-                <input type="number" step="0.1" class="form-control" name="rate" id="rate" placeholder="Enter daily rate price">
+                <input type="number" step="0.1" value="${equipment.rate}" class="form-control" name="rate" id="rate" placeholder="Enter daily rate price">
             </div>
 
             <div class="form-group">

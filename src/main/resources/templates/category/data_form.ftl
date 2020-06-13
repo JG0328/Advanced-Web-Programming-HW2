@@ -6,7 +6,7 @@
     <@macros.sidebar />
     <div id="content" class="p-4 p-md-5">
         <@macros.navbar />
-
+        <h2>${name} Family</h2>
         <form method="POST" action="${action}">
             <div class="form-group">
                 <label for="parent_category">Select a Parent Category</label>

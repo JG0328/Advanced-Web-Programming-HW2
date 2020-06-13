@@ -36,8 +36,8 @@ public class EquipmentsServices {
     }
 
     @Transactional
-    public List<Equipment> findAll(){
-        return equipmentsRepository.findAll();
+    public List<Equipment> findAllByEnabled(Boolean enabled){
+        return equipmentsRepository.findAllByEnabled(enabled);
     }
 
 

@@ -7,7 +7,9 @@
     <@macros.sidebar />
     <div id="content" class="p-4 p-md-5">
         <@macros.navbar />
-        <a href="/equipment/create"><button type="button" class="btn btn-outline-primary">Add a new Equipment</button></a>
+        <h2>Equipments</h2>
+        <br/>
+        <a href="/equipment/create"><button type="button" class="btn btn-outline-primary">Add new</button></a>
         <br />
         <table class="table">
             <br />
@@ -31,7 +33,11 @@
                         </#if>
                     </td>
                     <td>${equipment.name}</td>
-                    <td>${equipment.category.name}</td>
+                    <#if equipment.category??>
+                        <td>${equipment.category.name}</td>
+                    <#else>
+                        <td>None</td>
+                    </#if>
                     <td>${equipment.rate}</td>
                     <td>${equipment.stock}</td>
                     <td>
@@ -40,7 +46,7 @@
                         </a>
                     </td>
                     <td>
-                        <form method="POST" action="/family/delete/${equipment.id}">
+                        <form method="POST" action="/equipment/delete/${equipment.id}">
                             <button type="submit" class="btn btn-danger">Delete</button>
                         </form>
                     </td>

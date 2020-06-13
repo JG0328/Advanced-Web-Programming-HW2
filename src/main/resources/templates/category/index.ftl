@@ -7,8 +7,11 @@
     <@macros.sidebar />
     <div id="content" class="p-4 p-md-5">
         <@macros.navbar />
-        <a href="/family/create"><button type="button" class="btn btn-outline-primary">Add a new Category</button></a>
+        <h2>Families</h2>
+        <br/>
+        <a href="/family/create"><button type="button" class="btn btn-outline-primary">Add new</button></a>
         <br />
+
         <table class="table">
             <br />
             <thead>
