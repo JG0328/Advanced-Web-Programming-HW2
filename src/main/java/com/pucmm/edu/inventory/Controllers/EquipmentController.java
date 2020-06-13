@@ -9,10 +9,10 @@ import org.springframework.web.servlet.ModelAndView;
 import java.util.HashMap;
 
 @Controller
-public class MainController {
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+public class EquipmentController {
+    @RequestMapping(value = "/equipment", method = RequestMethod.GET)
     public ModelAndView main() {
         var params = new HashMap<String, Object>();
-        return new ModelAndView("index", params);
+        return new ModelAndView("equipment", params);
     }
 }
