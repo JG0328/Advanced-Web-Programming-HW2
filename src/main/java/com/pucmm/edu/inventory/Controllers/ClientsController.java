@@ -21,13 +21,20 @@ public class ClientsController {
         ModelAndView model = new ModelAndView();
         List<Client> clients = clientsServices.listClients();
         model.addObject("clients", clients);
-        model.setViewName("client");
+        model.setViewName("client/client");
         return model;
     }
 
-    @RequestMapping(value = "/client/add", method = RequestMethod.GET)
+    @RequestMapping(value = "/client/create", method = RequestMethod.GET)
     public ModelAndView newClient() {
-        return new ModelAndView("add_client", "client", new Client());
+        return new ModelAndView("client/add_client", "client", new Client());
+    }
+
+    @RequestMapping(value = "/client/create", consumes = "application/x-www-form-urlencoded", method = RequestMethod.POST)
+    public String create(Client client) {
+        client.setEnabled(true);
+        clientsServices.createClient(client);
+        return "redirect:/client";
     }
 
     @RequestMapping(value = "/client/delete", method = RequestMethod.GET)
