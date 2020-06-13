@@ -6,11 +6,11 @@
     <@macros.sidebar />
     <div id="content" class="p-4 p-md-5">
         <@macros.navbar />
-
         <form>
             <div class="form-group">
                 <label for="exampleInputEmail1">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                       placeholder="Enter email">
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">Password</label>
@@ -25,7 +25,7 @@
 
             <div class="form-group">
                 <label for="selectField">Select fields</label>
-                <select id="selectField"  class="browser-default custom-select">
+                <select id="selectField" class="browser-default custom-select">
                     <option selected>Open this select menu</option>
                     <option value="1">One</option>
                     <option value="2">Two</option>
