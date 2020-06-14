@@ -17,6 +17,12 @@
                     <li class="nav-item active">
                         <a class="nav-link" href="/"><@spring.message "home" /></a>
                     </li>
+                    <li>
+                        <select id="language" class="selectpicker" data-width="fit" style="margin-top:7px">
+                            <option value="en">English</option>
+                            <option value="es">Español</option>
+                        </select>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -56,25 +62,32 @@
 
 <#macro head>
     <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/css/styles.css">
-        <link rel="stylesheet" href="/css/main.css">
-        <title>Inventario de Equipo</title>
-    </head>
-    <body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <title><@spring.message "equipment_inventory" /></title>
+</head>
+<body>
 </#macro>
 
 
 <#macro foot>
-    <script src="/js/jquery.min.js"></script>
-    <script src="/js/popper.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
-    <script src="/js/main.js"></script>
-    </body>
-    </html>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/popper.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script type="text/javascript">
+    document.getElementById("language").onclick = function(e){
+        var language = e.target.value;
+        window.location.href = window.location.href.split('?')[0] + "?lang=" + language;
+    }
+</script>
+</body>
+</html>
 </#macro>
+
