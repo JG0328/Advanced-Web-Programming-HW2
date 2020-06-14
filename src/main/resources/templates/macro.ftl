@@ -49,7 +49,7 @@
                     <a href="/rental"><@spring.message "rental" /></a>
                 </li>
                 <li>
-                    <a href="#"><@spring.message "return" /></a>
+                    <a href="/receipt"><@spring.message "return" /></a>
                 </li>
                 <li>
                     <a href="#"><@spring.message "history" /></a>

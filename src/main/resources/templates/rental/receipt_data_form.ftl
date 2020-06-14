@@ -15,7 +15,7 @@
                 <dd>${receipt.returnDate}</dd>
                 <dt id="days">Days</dt>
                 <dd>${receipt.days}</dd>
-                <dt>Equipmets To Return</dt>
+                <dt>Equipments To Return</dt>
                 <dd>
                     <table class="table table-hover">
                         <tr>
