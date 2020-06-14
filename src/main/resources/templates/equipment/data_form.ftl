@@ -27,14 +27,21 @@
             </div>
             <div class="form-group">
                 <label for="rate"><@spring.message "rate" /></label>
-                <input type="number" step="0.1" value="${equipment.rate}" class="form-control" name="rate" id="rate" />
+                <input type="number" step="0.1" lang="en" value="${rate}" class="form-control" name="rate" id="rate" />
             </div>
 
-            <div class="form-group">
-                <label for="image"><@spring.message "image" /></label>
-                <input type="file" class="form-control-file" name="image_file" id="image_file" placeholder="Image">
-            </div>
 
+            <#if equipment.photo??>
+                <img src="data:${equipment.photo.mimeType};base64, ${equipment.photo.base64Image}" class="card-img-top" style="max-width: 100px; height: auto;" alt="Image" />
+            <#else>
+                <div class="form-group">
+                    <label for="image"><@spring.message "image" /> (<@spring.message "not_editable" />)</label>
+                    <input type="file" class="form-control-file" name="image_file"  id="image_file" placeholder="Image">
+                </div>
+            </#if>
+
+
+            <br/><br/>
             <button type="submit" class="btn btn-primary">${name}</button>
         </form>
     </div>

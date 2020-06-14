@@ -76,10 +76,12 @@ public class EquipmentController {
         params.put("name", "Update");
         params.put("equipment", equipment);
         params.put("categories", categoriesServices.findAll(true));
+        params.put("rate", Float.toString(equipment.getRate()));
+        System.out.println(equipment.getRate());
         return new ModelAndView("equipment/data_form", params);
     }
 
-    @RequestMapping(value = "/equipment/update/{id}", consumes = "application/x-www-form-urlencoded", method = RequestMethod.POST)
+    @RequestMapping(value = "/equipment/update/{id}", consumes = "application/x-www-form-urlencoded", headers=("content-type=multipart/*"), method = RequestMethod.POST)
     public String update(Equipment equipment, @RequestParam("category") String categoryIdString) {
         Category category;
         try{
