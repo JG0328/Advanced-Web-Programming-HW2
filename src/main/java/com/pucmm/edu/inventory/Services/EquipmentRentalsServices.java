@@ -17,7 +17,7 @@ public class EquipmentRentalsServices {
     }
 
     @Transactional
-    public void UpdateEquipmentRental(EquipmentRental equipmentRental, float cost, int days) {
+    public void updateEquipmentRental(EquipmentRental equipmentRental, float cost, int days) {
         equipmentRental.setCost(cost);
         equipmentRental.setDays(days);
 

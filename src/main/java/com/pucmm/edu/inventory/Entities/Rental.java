@@ -5,11 +5,11 @@ import java.util.Date;
 import java.util.Set;
 
 @Entity
-public class Receipt {
+public class Rental {
     @Id
     @GeneratedValue
     private int id;
-    private Date date;
+    private String date;
     private String returnDate;
     @OneToOne
     private Client client;
@@ -19,10 +19,10 @@ public class Receipt {
     private int days;
     private boolean pending;
 
-    public Receipt() {
+    public Rental() {
     }
 
-    public Receipt(Date date, String returnDate, Client client, Set<EquipmentRental> equipmentRental, float cost, int days, boolean pending) {
+    public Rental(String date, String returnDate, Client client, Set<EquipmentRental> equipmentRental, float cost, int days, boolean pending) {
         this.date = date;
         this.returnDate = returnDate;
         this.client = client;
@@ -40,11 +40,11 @@ public class Receipt {
         this.id = id;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
