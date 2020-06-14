@@ -83,16 +83,17 @@
 <script src="/js/main.js"></script>
 <script type="text/javascript">
     var selectedLanguage = sessionStorage.getItem("language");
-    if(selectedLanguage){
+    if (selectedLanguage) {
         document.getElementById("language").value = selectedLanguage;
     }
 
-    document.getElementById("language").onclick = function(e){
+    document.getElementById("language").onclick = function (e) {
         var language = e.target.value;
         sessionStorage.setItem("language", language);
         window.location.href = window.location.href.split('?')[0] + "?lang=" + language;
     }
 </script>
+<script src="/js/jquery-ui-1.12.1/jquery-ui.js"></script>
 </body>
 </html>
 </#macro>

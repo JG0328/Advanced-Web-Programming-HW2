@@ -33,6 +33,10 @@ public class Client {
         this.enabled = enabled;
     }
 
+    public String getFullName() {
+        return firstName + " " + lastName;
+    }
+
     public int getId() {
         return id;
     }

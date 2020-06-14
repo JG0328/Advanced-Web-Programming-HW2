@@ -40,7 +40,7 @@ public class RentalsController {
         ModelAndView model = new ModelAndView();
         List<Rental> r = rentalsServices.receiptList(true);
         model.addObject("rentals", r);
-        model.setViewName("rental/rental");
+        model.setViewName("rental/rental_index");
         return model;
     }
 
@@ -50,7 +50,7 @@ public class RentalsController {
         float c = 0;
         List<Rental> r = rentalsServices.receiptList(false);
         model.addObject("receipts", r);
-        model.setViewName("rental/receipt");
+        model.setViewName("rental/receipt_index");
         return model;
     }
 
@@ -74,7 +74,7 @@ public class RentalsController {
         }
 
         model.addObject("rental", rental);
-        model.setViewName("rental/add_receipt");
+        model.setViewName("rental/receipt_data_form");
         return model;
     }
 
@@ -121,7 +121,7 @@ public class RentalsController {
         model.addObject("rental", rental);
         model.addObject("clients", clientsServices.listClients());
         model.addObject("equipments", equipmentsServices.listEquipments(true, 0));
-        model.setViewName("rental/add_rental");
+        model.setViewName("rental/rental_data_form");
         return model;
     }
 

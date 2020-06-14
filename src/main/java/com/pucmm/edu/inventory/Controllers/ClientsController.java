@@ -27,7 +27,7 @@ public class ClientsController {
 
     @RequestMapping(value = "/client/create", method = RequestMethod.GET)
     public ModelAndView newClient() {
-        return new ModelAndView("client/add_client", "client", new Client());
+        return new ModelAndView("client/data_form", "client", new Client());
     }
 
     @RequestMapping(value = "/client/create", consumes = "application/x-www-form-urlencoded", method = RequestMethod.POST)
