@@ -28,8 +28,8 @@
             <#list equipments as equipment>
                 <tr>
                     <td>
-                        <#if equipment.image??>
-                            ${equipment.image}
+                        <#if equipment.photo??>
+                            <img src="data:${equipment.photo.mimeType};base64, ${equipment.photo.base64Image}" class="card-img-top" style="max-width: 100px; height: auto;" alt="Image" />
                         </#if>
                     </td>
                     <td>${equipment.name}</td>

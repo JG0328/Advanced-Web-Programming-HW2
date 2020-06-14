@@ -16,14 +16,15 @@ public class Equipment {
     private Category category;
     private boolean enabled;
     private int days;
-    private String photo;
+    @OneToOne
+    private Image photo;
     private int stock;
     private int stockRent;
 
     public Equipment() {
     }
 
-    public Equipment(String name, float rate, Category category, boolean enabled, String photo, int stock, int stockRent) {
+    public Equipment(String name, float rate, Category category, boolean enabled, Image photo, int stock, int stockRent) {
         this.name = name;
         this.rate = rate;
         this.category = category;
@@ -81,11 +82,11 @@ public class Equipment {
         this.days = days;
     }
 
-    public String getPhoto() {
+    public Image getPhoto() {
         return photo;
     }
 
-    public void setPhoto(String photo) {
+    public void setPhoto(Image photo) {
         this.photo = photo;
     }
 

@@ -7,7 +7,7 @@
     <div id="content" class="p-4 p-md-5">
         <@macros.navbar />
         <h2>${name} <@spring.message "equipment" /></h2>
-        <form method="POST" action="${action}">
+        <form method="POST" action="${action}" enctype=multipart/form-data>
             <div class="form-group">
                 <label for="family"><@spring.message "select_family" /></label>
                 <select id="category" name="category"  class="browser-default custom-select">
@@ -32,7 +32,7 @@
 
             <div class="form-group">
                 <label for="image"><@spring.message "image" /></label>
-                <input type="file" class="form-control-file" id="image" placeholder="Image">
+                <input type="file" class="form-control-file" name="image_file" id="image_file" placeholder="Image">
             </div>
 
             <button type="submit" class="btn btn-primary">${name}</button>
