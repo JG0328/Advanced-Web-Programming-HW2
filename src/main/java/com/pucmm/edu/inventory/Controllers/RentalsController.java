@@ -38,7 +38,7 @@ public class RentalsController {
     @RequestMapping(value = "/rental", method = RequestMethod.GET)
     public ModelAndView indexRentals() {
         ModelAndView model = new ModelAndView();
-        List<Rental> r = rentalsServices.receiptList(true);
+        List<Rental> r = rentalsServices.rentalList(true);
         model.addObject("rentals", r);
         model.setViewName("rental/rental_index");
         return model;
@@ -48,7 +48,7 @@ public class RentalsController {
     public ModelAndView indexReceipts() {
         ModelAndView model = new ModelAndView();
         float c = 0;
-        List<Rental> r = rentalsServices.receiptList(false);
+        List<Rental> r = rentalsServices.rentalList(false);
         model.addObject("receipts", r);
         model.setViewName("rental/receipt_index");
         return model;

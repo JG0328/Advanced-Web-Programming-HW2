@@ -31,11 +31,11 @@ public class RentalsServices {
         rentalsRepository.save(rental);
     }
 
-    public List<Rental> receiptList(Boolean x) {
+    public List<Rental> rentalList(Boolean x) {
         return rentalsRepository.findAllByPendingOrderByReturnDateDesc(x);
     }
 
-    public List<Rental> receiptListAll() {
+    public List<Rental> rentalListAll() {
         return rentalsRepository.findAll();
     }
 
@@ -45,7 +45,7 @@ public class RentalsServices {
         rentalsRepository.save(rental);
     }
 
-    public List<Rental> receiptsByClient(Client client) {
+    public List<Rental> rentalsByClient(Client client) {
         return rentalsRepository.findAllByClient(client);
     }
 

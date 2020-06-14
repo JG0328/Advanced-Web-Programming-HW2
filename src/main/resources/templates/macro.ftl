@@ -52,7 +52,7 @@
                     <a href="/receipt"><@spring.message "return" /></a>
                 </li>
                 <li>
-                    <a href="#"><@spring.message "history" /></a>
+                    <a href="/history"><@spring.message "history" /></a>
                 </li>
             </ul>
 
@@ -89,7 +89,7 @@
         document.getElementById("language").value = selectedLanguage;
     }
 
-    document.getElementById("language").onclick = function (e) {
+    document.getElementById("language").onchange = function (e) {
         var language = e.target.value;
         sessionStorage.setItem("language", language);
         window.location.href = window.location.href.split('?')[0] + "?lang=" + language;
