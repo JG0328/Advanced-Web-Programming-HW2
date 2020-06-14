@@ -9,7 +9,7 @@
         <h2>${name} <@spring.message "category" /></h2>
         <form method="POST" action="${action}">
             <div class="form-group">
-                <label for="parent_category"><@spring.message "parent_category" /></label>
+                <label for="parent_category"><@spring.message "select_parent_category" /></label>
                 <select id="parent_category" name="parent_category"  class="browser-default custom-select">
                     <option selected value="-1"><@spring.message "none" /></option>
                     <#list parent_categories as parent_category>

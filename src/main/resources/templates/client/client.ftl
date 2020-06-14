@@ -5,18 +5,20 @@
     <@macros.sidebar />
     <div id="content" class="p-4 p-md-5">
         <@macros.navbar />
+        <h2><@spring.message "client" /></h2>
+        <br />
         <a href="/client/create">
-            <button type="button" class="btn btn-outline-primary">Add a new Client</button>
+            <button type="button" class="btn btn-outline-primary"><@spring.message "add_new" /></button>
         </a>
         <br/>
         <table class="table">
             <br/>
             <thead>
             <tr>
-                <th scope="col">ID Number</th>
-                <th scope="col">First Name</th>
-                <th scope="col">Last Name</th>
-                <th scope="col">Actions</th>
+                <th scope="col"><@spring.message "id_number" /></th>
+                <th scope="col"><@spring.message "first_name" /></th>
+                <th scope="col"><@spring.message "last_name" /></th>
+                <th scope="col"><@spring.message "delete" /></th>
             </tr>
             </thead>
             <tbody>
@@ -26,7 +28,7 @@
                     <td>${client.firstName}</td>
                     <td>${client.lastName}</td>
                     <td>
-                        <a href="/client/delete?id=${client.id}" class="btn btn-danger btn-sm">Delete</a>
+                        <a href="/client/delete?id=${client.id}" class="btn btn-danger btn-sm"><@spring.message "delete" /></a>
                     </td>
                 </tr>
             </#list>

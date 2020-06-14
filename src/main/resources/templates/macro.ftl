@@ -15,7 +15,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="nav navbar-nav ml-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Home</a>
+                        <a class="nav-link" href="/"><@spring.message "home" /></a>
                     </li>
                 </ul>
             </div>
@@ -28,25 +28,25 @@
         <div class="p-4 pt-5">
             <ul class="list-unstyled components mb-5">
                 <li>
-                    <a href="#">Dashboard</a>
+                    <a href="/"><@spring.message "dashboard" /></a>
                 </li>
                 <li>
-                    <a href="/client">Clients</a>
+                    <a href="/client"><@spring.message "client" /></a>
                 </li>
                 <li>
-                    <a href="/equipment">Equipment</a>
+                    <a href="/equipment"><@spring.message "equipment" /></a>
                 </li>
                 <li>
-                    <a href="/family">Families</a>
+                    <a href="/family"><@spring.message "category" /></a>
                 </li>
                 <li>
-                    <a href="#">Rentals</a>
+                    <a href="#"><@spring.message "rental" /></a>
                 </li>
                 <li>
-                    <a href="#">Returns</a>
+                    <a href="#"><@spring.message "return" /></a>
                 </li>
                 <li>
-                    <a href="#">History</a>
+                    <a href="#"><@spring.message "history" /></a>
                 </li>
             </ul>
 

@@ -8,22 +8,22 @@
         <@macros.navbar />
         <form action="/client/create" method="post">
             <div class="form-group">
-                <label for="idNumber">ID Number</label>
+                <label for="idNumber"><@spring.message "id_number" /></label>
                 <input type="text" class="form-control" id="idNumber" name="idNumber"/>
             </div>
 
             <div class="form-group">
-                <label for="firstName">First Name</label>
+                <label for="firstName"><@spring.message "first_name" /></label>
                 <input type="text" class="form-control" id="firstName" name="firstName"/>
             </div>
 
             <div class="form-group">
-                <label for="lastName">Last Name</label>
+                <label for="lastName"><@spring.message "last_name" /></label>
                 <input type="text" class="form-control" id="lastName" name="lastName"/>
             </div>
 
             <div class="form-group">
-                <label for="phoneNumber">Phone Number</label>
+                <label for="phoneNumber"><@spring.message "phone_number" /></label>
                 <input type="text" class="form-control" id="phoneNumber" name="phoneNumber"/>
             </div>
 
@@ -32,7 +32,7 @@
                 <input type="text" class="form-control" id="email" name="email"/>
             </div>
 
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Create</button>
         </form>
     </div>
 </div>
