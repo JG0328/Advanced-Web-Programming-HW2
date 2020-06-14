@@ -46,7 +46,7 @@
                     <a href="/family"><@spring.message "category" /></a>
                 </li>
                 <li>
-                    <a href="#"><@spring.message "rental" /></a>
+                    <a href="/rental"><@spring.message "rental" /></a>
                 </li>
                 <li>
                     <a href="#"><@spring.message "return" /></a>

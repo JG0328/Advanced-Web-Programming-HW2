@@ -43,7 +43,7 @@
                         </dl>
                     </td>
                     <td>
-                        <a class="btn btn-outline-primary btn-sm" href="/receipt/create">Receipt</a>
+                        <a class="btn btn-outline-primary btn-sm" href="/receipt/create?id=${rental.id}">Receipt</a>
                     </td>
                 </tr>
             </#list>
