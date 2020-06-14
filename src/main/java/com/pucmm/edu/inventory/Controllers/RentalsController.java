@@ -152,8 +152,8 @@ public class RentalsController {
         Date firstDate = sdf.parse(rental.getReturnDate());
         Date secondDate = sdf.parse(rental.getDate());
 
-        long diffInMillies = Math.abs(secondDate.getTime() - firstDate.getTime());
-        long diff = TimeUnit.DAYS.convert(diffInMillies, TimeUnit.MILLISECONDS);
+        long diffInMill = Math.abs(secondDate.getTime() - firstDate.getTime());
+        long diff = TimeUnit.DAYS.convert(diffInMill, TimeUnit.MILLISECONDS);
         rental.setDays((int) diff);
         rental.setEquipmentRental(rented);
         rental.setPending(true);
