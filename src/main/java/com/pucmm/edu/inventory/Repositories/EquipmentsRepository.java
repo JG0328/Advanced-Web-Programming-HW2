@@ -8,4 +8,6 @@ import java.util.List;
 
 public interface EquipmentsRepository extends JpaRepository<Equipment, Integer> {
     List<Equipment> findAllByEnabled(Boolean enabled);
+
+    List<Equipment> findAllByEnabledAndStockGreaterThan(Boolean x, int stock);
 }

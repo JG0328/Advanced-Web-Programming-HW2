@@ -36,16 +36,12 @@ public class EquipmentsServices {
     }
 
     @Transactional
-    public List<Equipment> findAllByEnabled(Boolean enabled){
+    public List<Equipment> findAllByEnabled(Boolean enabled) {
         return equipmentsRepository.findAllByEnabled(enabled);
     }
 
+    public List<Equipment> listEquipments(Boolean x, int stock) {
 
-
-
-
-//    public List<Equipment> listEquip(Boolean aBoolean, int stock) {
-//
-//        return equipmentsRepository.findAllByEnabledAndStockGreaterThan(aBoolean, stock);
-//    }
+        return equipmentsRepository.findAllByEnabledAndStockGreaterThan(x, stock);
+    }
 }

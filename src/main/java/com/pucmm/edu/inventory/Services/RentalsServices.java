@@ -15,7 +15,7 @@ public class RentalsServices {
     RentalsRepository rentalsRepository;
 
     @Transactional
-    public void createReceipt(Rental rental) {
+    public void createRental(Rental rental) {
         rentalsRepository.save(rental);
     }
 
