@@ -15,9 +15,9 @@
                 <th>Client</th>
                 <th>Date</th>
                 <th>Return Date</th>
-                <td>Days</td>
+                <th>Days</th>
                 <th>Equipments</th>
-                <td>Return</td>
+                <th>Return</th>
             </tr>
             </thead>
             <tbody>
