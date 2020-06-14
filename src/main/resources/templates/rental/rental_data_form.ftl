@@ -13,12 +13,12 @@
             </div>
             <div class="form-group">
                 <label>Return Date</label>
-                <input type="date" class="form-control" name="returnDate" id="returnDate"
+                <input type="text" class="form-control" name="returnDate" id="returnDate"
                        required/>
             </div>
             <div class="form-group">
                 <label>Client</label>
-                <select class="form-control" name="selectClient" id="selectClient" required>
+                <select class="form-control" name="client" id="client" required>
                     <option>...</option>
                     <#list clients as client>
                         <option value="${client.id}">${client.getFullName()}</option>
@@ -26,21 +26,21 @@
                 </select>
             </div>
             <table class="table">
-                <tr>
-
-                </tr>
+                <#list equipments as equipment>
+                    <tr>
+                        <td><input class="form-control" type="checkbox" name="checkEquip" value="${equipment.id}"/></td>
+                        <td>${equipment.category.name}</td>
+                        <td>${equipment.name}</td>
+                        <td>${equipment.rate}</td>
+                        <td>${equipment.stock}</td>
+                        <td><input name="stockEquip" value="0" type="number" class="form-control"
+                                   max="${equipment.stock}" min="0"/></td>
+                        <input type="hidden" name="index" value="${equipment?index}"/>
+                    </tr>
+                </#list>
             </table>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
 </div>
 <@macros.foot />
-<script>
-    $(function () {
-        $("#returnDate").datepicker({
-            dateFormat: "dd/mm/yy",
-            defaultDate: +1,
-            minDate: +1
-        });
-    });
-</script>

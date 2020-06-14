@@ -59,11 +59,11 @@ public class RentalsController {
         ModelAndView model = new ModelAndView();
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy", Locale.ENGLISH);
         String today = sdf.format(new Date());
-        Rental rental = rentalsServices.findRental(id);
+        Rental receipt = rentalsServices.findRental(id);
 
-        for (EquipmentRental e : rental.getEquipmentRental()) {
+        for (EquipmentRental e : receipt.getEquipmentRental()) {
             Date firstDate = sdf.parse(today);
-            Date secondDate = sdf.parse(rental.getDate());
+            Date secondDate = sdf.parse(receipt.getDate());
 
             long diffInMill = Math.abs(secondDate.getTime() - firstDate.getTime());
             long diff = TimeUnit.DAYS.convert(diffInMill, TimeUnit.MILLISECONDS);
@@ -73,7 +73,7 @@ public class RentalsController {
                 equipmentRentalsServices.updateEquipmentRental(e, 1 * e.getEquipment().getRate() * e.getNumberRented(), 1);
         }
 
-        model.addObject("rental", rental);
+        model.addObject("receipt", receipt);
         model.setViewName("rental/receipt_data_form");
         return model;
     }
@@ -126,7 +126,7 @@ public class RentalsController {
     }
 
     @RequestMapping(value = "/rental/create", method = RequestMethod.POST)
-    public ModelAndView createRental(@RequestParam("index") List<Integer> index, @ModelAttribute("rental") Rental rental, @RequestParam("checkEquip") List<Integer> checks, @RequestParam("stockEquip") List<Integer> stocks) throws ParseException {
+    public ModelAndView createRental(@ModelAttribute("rental") Rental rental, @RequestParam("checkEquip") List<Integer> checks, @RequestParam("stockEquip") List<Integer> stocks) throws ParseException {
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy", Locale.ENGLISH);
         Date date = new Date();
 

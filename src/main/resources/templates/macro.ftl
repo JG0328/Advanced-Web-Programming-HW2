@@ -70,6 +70,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/jquery-ui.css">
     <title><@spring.message "equipment_inventory" /></title>
 </head>
 <body>
@@ -77,10 +78,11 @@
 
 
 <#macro foot>
-<script src="/js/jquery.min.js"></script>
+<script src="/js/jquery.js"></script>
 <script src="/js/popper.js"></script>
 <script src="/js/bootstrap.min.js"></script>
 <script src="/js/main.js"></script>
+<script src="/js/jquery-ui.js"></script>
 <script type="text/javascript">
     var selectedLanguage = sessionStorage.getItem("language");
     if (selectedLanguage) {
@@ -92,6 +94,14 @@
         sessionStorage.setItem("language", language);
         window.location.href = window.location.href.split('?')[0] + "?lang=" + language;
     }
+
+    // Datepicker
+    $(function () {
+        $("#returnDate").datepicker({
+            dateFormat: "dd/mm/yy",
+            minDate: "+1D"
+        }).datepicker("setDate", "+1D");
+    });
 </script>
 </body>
 </html>
