@@ -82,8 +82,14 @@
 <script src="/js/bootstrap.min.js"></script>
 <script src="/js/main.js"></script>
 <script type="text/javascript">
+    var selectedLanguage = sessionStorage.getItem("language");
+    if(selectedLanguage){
+        document.getElementById("language").value = selectedLanguage;
+    }
+
     document.getElementById("language").onclick = function(e){
         var language = e.target.value;
+        sessionStorage.setItem("language", language);
         window.location.href = window.location.href.split('?')[0] + "?lang=" + language;
     }
 </script>
