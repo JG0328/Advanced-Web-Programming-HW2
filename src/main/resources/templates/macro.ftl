@@ -93,7 +93,6 @@
         window.location.href = window.location.href.split('?')[0] + "?lang=" + language;
     }
 </script>
-<script src="/js/jquery-ui-1.12.1/jquery-ui.js"></script>
 </body>
 </html>
 </#macro>
