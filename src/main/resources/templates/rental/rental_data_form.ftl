@@ -19,16 +19,25 @@
             <div class="form-group">
                 <label>Client</label>
                 <select class="form-control" name="client" id="client" required>
-                    <option>...</option>
                     <#list clients as client>
                         <option value="${client.id}">${client.getFullName()}</option>
                     </#list>
                 </select>
             </div>
-            <table class="table">
+            <br/>
+            <h4>Select Equipments</h4>
+            <table class="table" border="3">
+                <tr>
+                    <th>Select</th>
+                    <th>Category</th>
+                    <th>Name</th>
+                    <th>Daily Rate</th>
+                    <th>Stock</th>
+                    <th>Number of items</th>
+                </tr>
                 <#list equipments as equipment>
                     <tr>
-                        <td><input class="form-control" type="checkbox" name="checkEquip" value="${equipment.id}"/></td>
+                        <td><input type="checkbox" name="checkEquip" value="${equipment.id}"/></td>
                         <td>${equipment.category.name}</td>
                         <td>${equipment.name}</td>
                         <td>${equipment.rate}</td>
@@ -43,7 +52,7 @@
                 <button type="submit" class="btn btn-primary">Submit</button>
             <#else>
                 <div class="alert alert-warning" role="alert">
-                    There are no equipments or clients to create a rental
+                    There are no equipments available or registered clients to create a rental
                 </div>
             </#if>
 
