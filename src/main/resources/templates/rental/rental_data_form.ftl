@@ -39,7 +39,14 @@
                     </tr>
                 </#list>
             </table>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <#if equipments?size != 0 && clients?size != 0>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            <#else>
+                <div class="alert alert-warning" role="alert">
+                    There are no equipments or clients to create a rental
+                </div>
+            </#if>
+
         </form>
     </div>
 </div>

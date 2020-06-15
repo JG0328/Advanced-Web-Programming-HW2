@@ -11,7 +11,6 @@
             <div class="form-group">
                 <label for="family"><@spring.message "select_family" /></label>
                 <select id="category" name="category"  class="browser-default custom-select">
-                    <option selected value="-1"><@spring.message "none" /></option>
                     <#list categories as category>
                         <option value="${category.id}">${category.name}</option>
                     </#list>
@@ -46,7 +45,14 @@
 
 
             <br/><br/>
-            <button type="submit" class="btn btn-primary">${name}</button>
+
+            <#if categories?size != 0>
+                <button type="submit" class="btn btn-primary">${name}</button>
+            <#else>
+                <div class="alert alert-warning" role="alert">
+                    <@spring.message "no_categories_warning" />
+                </div>
+            </#if>
         </form>
     </div>
 </div>
