@@ -29,8 +29,9 @@
                 <label for="rate"><@spring.message "rate" /></label>
                 <#if rate??>
                     <input type="number" step="0.1" lang="en" value="${rate}" min="0.1" class="form-control" name="rate" id="rate" />
+                <#else>
+                    <input type="number" step="0.1" lang="en" value="0.1" min="0.1" class="form-control" name="rate" id="rate" />
                 </#if>
-                <input type="number" step="0.1" lang="en" value="0.1" min="0.1" class="form-control" name="rate" id="rate" />
             </div>
 
 
