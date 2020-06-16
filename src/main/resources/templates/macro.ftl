@@ -37,19 +37,19 @@
                     <a href="/"><@spring.message "dashboard" /></a>
                 </li>
                 <li>
-                    <a href="/client"><@spring.message "client" /></a>
+                    <a href="/client"><@spring.message "clients" /></a>
                 </li>
                 <li>
-                    <a href="/equipment"><@spring.message "equipment" /></a>
+                    <a href="/equipment"><@spring.message "equipments" /></a>
                 </li>
                 <li>
-                    <a href="/family"><@spring.message "category" /></a>
+                    <a href="/family"><@spring.message "categories" /></a>
                 </li>
                 <li>
-                    <a href="/rental"><@spring.message "rental" /></a>
+                    <a href="/rental"><@spring.message "rentals" /></a>
                 </li>
                 <li>
-                    <a href="/receipt"><@spring.message "return" /></a>
+                    <a href="/receipt"><@spring.message "returns" /></a>
                 </li>
                 <li>
                     <a href="/history"><@spring.message "history" /></a>

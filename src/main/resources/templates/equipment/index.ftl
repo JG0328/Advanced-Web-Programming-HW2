@@ -7,7 +7,7 @@
     <@macros.sidebar />
     <div id="content" class="p-4 p-md-5">
         <@macros.navbar />
-        <h2><@spring.message "equipment" /></h2>
+        <h2><@spring.message "equipments" /></h2>
         <br/>
         <a href="/equipment/create"><button type="button" class="btn btn-outline-primary"><@spring.message "add_new" /></button></a>
         <br />

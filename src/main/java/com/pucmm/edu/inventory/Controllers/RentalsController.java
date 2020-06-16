@@ -79,7 +79,7 @@ public class RentalsController {
     }
 
     @RequestMapping(value = "/receipt/create", method = RequestMethod.POST)
-    public ModelAndView createReceipt(@RequestParam("chk") List<Integer> equipmentIds, @RequestParam("idAlc") Integer id) {
+    public String createReceipt(@RequestParam("chk") List<Integer> equipmentIds, @RequestParam("idAlc") Integer id) {
         int check = 0;
 
         Rental rental = rentalsServices.findRental(id);
@@ -108,7 +108,7 @@ public class RentalsController {
             rentalsServices.updateStatus(rental, false);
         }
 
-        return indexRentals();
+        return "redirect:/rental/receipt_index";
     }
 
     @RequestMapping(value = "/rental/create", method = RequestMethod.GET)
@@ -126,7 +126,7 @@ public class RentalsController {
     }
 
     @RequestMapping(value = "/rental/create", method = RequestMethod.POST)
-    public ModelAndView createRental(@ModelAttribute("rental") Rental rental, @RequestParam("checkEquip") List<Integer> checks, @RequestParam("stockEquip") List<Integer> stocks) throws ParseException {
+    public String createRental(@ModelAttribute("rental") Rental rental, @RequestParam("checkEquip") List<Integer> checks, @RequestParam("stockEquip") List<Integer> stocks) throws ParseException {
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy", Locale.ENGLISH);
         Date date = new Date();
 
@@ -158,6 +158,6 @@ public class RentalsController {
         rental.setEquipmentRental(rented);
         rental.setPending(true);
         rentalsServices.createRental(rental);
-        return indexRentals();
+        return "redirect:/rental/rental_index";
     }
 }

@@ -8,11 +8,11 @@
         <@macros.navbar />
         <table class="table">
             <tr>
-                <th>Client</th>
-                <th>Date</th>
-                <th>Return Date</th>
-                <th>Equipments</th>
-                <th>Cost</th>
+                <th><@spring.message "client" /></th>
+                <th><@spring.message "date" /></th>
+                <th><@spring.message "return" /> <@spring.message "date" /></th>
+                <th><@spring.message "equipments" /></th>
+                <th><@spring.message "total_cost" /></th>
             </tr>
             <#list receipts as receipt>
                 <tr>

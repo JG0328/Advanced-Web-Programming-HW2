@@ -7,7 +7,7 @@
     <@macros.sidebar />
     <div id="content" class="p-4 p-md-5">
         <@macros.navbar />
-        <h2><@spring.message "category" /></h2>
+        <h2><@spring.message "categories" /></h2>
         <br/>
         <a href="/family/create"><button type="button" class="btn btn-outline-primary"><@spring.message "add_new" /></button></a>
         <br />

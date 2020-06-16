@@ -6,7 +6,7 @@
     <@macros.sidebar />
     <div id="content" class="p-4 p-md-5">
         <@macros.navbar />
-        <h2>${name} <@spring.message "equipment" /></h2>
+        <h2>${name} <@spring.message "equipments" /></h2>
         <form method="POST" action="${action}" enctype=multipart/form-data>
             <div class="form-group">
                 <label for="family"><@spring.message "select_family" /></label>

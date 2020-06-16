@@ -12,7 +12,6 @@
             <h3>Client:</h3>
             <form class="form-inline" action="/history" method="post">
                 <select class="form-control col-10" name="selectClient">
-                    <option>None</option>
                     <#list clients as client>
                         <option value="${client.id}">${client.getFullName()}</option>
                     </#list>

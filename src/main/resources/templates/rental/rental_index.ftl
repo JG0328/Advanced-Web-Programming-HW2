@@ -4,20 +4,22 @@
 
 <div class="wrapper d-flex align-items-stretch">
     <@macros.sidebar />
+
     <div id="content" class="p-4 p-md-5">
         <@macros.navbar />
+        <h2><@spring.message "rentals" /></h2>
         <br/>
-        <a href="/rental/create" class="btn btn-outline-primary">New Rental</a>
-        <br/>
+        <a href="/rental/create" class="btn btn-outline-primary"><@spring.message "new_rental" /></a>
+        <br/><br/>
         <table class="table">
             <thead>
             <tr>
-                <th>Client</th>
-                <th>Date</th>
-                <th>Return Date</th>
-                <th>Days</th>
-                <th>Equipments</th>
-                <th>Return</th>
+                <th><@spring.message "client" /></th>
+                <th><@spring.message "date" /></th>
+                <th><@spring.message "return_date" /></th>
+                <th><@spring.message "days" /></th>
+                <th><@spring.message "equipments" /></th>
+                <th><@spring.message "return" /> <@spring.message "equipment" /></th>
             </tr>
             </thead>
             <tbody>
@@ -32,7 +34,7 @@
                             <#list rental.equipmentRental as equip>
                                 <#if equip.returned>
                                     <dd>
-                                        <del>${"${equip.equipment.name}" + " - "+"${equip.numberRented}" + " Stock"}</del>
+                                        <del>${"${equip.equipment.name}" + " - "+"${equip.numberRented}" + ' Stock'}</del>
                                     </dd>
                                 <#else>
                                     <dd>
@@ -43,7 +45,7 @@
                         </dl>
                     </td>
                     <td>
-                        <a class="btn btn-outline-primary btn-sm" href="/receipt/create?id=${rental.id}">Receipt</a>
+                        <a class="btn btn-outline-primary btn-sm" href="/receipt/create?id=${rental.id}"><@spring.message "receipt" /></a>
                     </td>
                 </tr>
             </#list>

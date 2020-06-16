@@ -6,7 +6,7 @@
     <@macros.sidebar />
     <div id="content" class="p-4 p-md-5">
         <@macros.navbar />
-        <h2>${name} <@spring.message "category" /></h2>
+        <h2>${name} <@spring.message "categories" /></h2>
         <form method="POST" action="${action}">
             <div class="form-group">
                 <label for="parent_category"><@spring.message "select_parent_category" /></label>

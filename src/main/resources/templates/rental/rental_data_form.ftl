@@ -8,16 +8,16 @@
         <@macros.navbar />
         <form method="post" action="/rental/create">
             <div class="form-group">
-                <label>Date</label>
+                <label><@spring.message "date" /></label>
                 <input type="text" class="form-control" value="${rental.date}" disabled name="date"/>
             </div>
             <div class="form-group">
-                <label>Return Date</label>
+                <label><@spring.message "return" /> <@spring.message "date" /></label>
                 <input type="text" class="form-control" name="returnDate" id="returnDate"
                        required/>
             </div>
             <div class="form-group">
-                <label>Client</label>
+                <label><@spring.message "client" /></label>
                 <select class="form-control" name="client" id="client" required>
                     <#list clients as client>
                         <option value="${client.id}">${client.getFullName()}</option>
@@ -25,15 +25,15 @@
                 </select>
             </div>
             <br/>
-            <h4>Select Equipments</h4>
+            <h4><@spring.message "select" /> <@spring.message "equipments" /></h4>
             <table class="table" border="3">
                 <tr>
-                    <th>Select</th>
-                    <th>Category</th>
-                    <th>Name</th>
-                    <th>Daily Rate</th>
-                    <th>Stock</th>
-                    <th>Number of items</th>
+                    <th><@spring.message "select" /></th>
+                    <th><@spring.message "category" /></th>
+                    <th><@spring.message "name" /></th>
+                    <th><@spring.message "rate" /></th>
+                    <th><@spring.message "stock" /></th>
+                    <th><@spring.message "number_of_equipments" /></th>
                 </tr>
                 <#list equipments as equipment>
                     <tr>
@@ -52,7 +52,7 @@
                 <button type="submit" class="btn btn-primary">Submit</button>
             <#else>
                 <div class="alert alert-warning" role="alert">
-                    There are no equipments available or registered clients to create a rental
+                    <@spring.message "rentals_error" />
                 </div>
             </#if>
 
