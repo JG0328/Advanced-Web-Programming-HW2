@@ -108,7 +108,7 @@ public class RentalsController {
             rentalsServices.updateStatus(rental, false);
         }
 
-        return "redirect:/rental";
+        return "redirect:/receipt";
     }
 
     @RequestMapping(value = "/rental/create", method = RequestMethod.GET)
