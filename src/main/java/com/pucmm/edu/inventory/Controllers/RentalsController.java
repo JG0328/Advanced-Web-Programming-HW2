@@ -108,7 +108,7 @@ public class RentalsController {
             rentalsServices.updateStatus(rental, false);
         }
 
-        return "redirect:/rental/receipt_index";
+        return "redirect:/rental";
     }
 
     @RequestMapping(value = "/rental/create", method = RequestMethod.GET)
@@ -158,6 +158,6 @@ public class RentalsController {
         rental.setEquipmentRental(rented);
         rental.setPending(true);
         rentalsServices.createRental(rental);
-        return "redirect:/rental/rental_index";
+        return "redirect:/rental";
     }
 }
