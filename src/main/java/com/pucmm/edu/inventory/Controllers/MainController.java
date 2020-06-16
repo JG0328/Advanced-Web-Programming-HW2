@@ -1,7 +1,5 @@
 package com.pucmm.edu.inventory.Controllers;
 
-import com.pucmm.edu.inventory.Classes.Chart;
-import com.pucmm.edu.inventory.Entities.EquipmentRental;
 import com.pucmm.edu.inventory.Entities.Rental;
 import com.pucmm.edu.inventory.Services.ClientsServices;
 import com.pucmm.edu.inventory.Services.RentalsServices;
@@ -12,8 +10,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 @Controller
@@ -26,7 +22,9 @@ public class MainController {
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public ModelAndView main() {
-        return new ModelAndView();
+        ModelAndView model = new ModelAndView();
+        model.setViewName("index");
+        return model;
     }
 
     @RequestMapping(value = "/history", method = RequestMethod.GET)
